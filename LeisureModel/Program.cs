@@ -68,13 +68,13 @@ namespace LeisureModel
 
                                 if (j == 0 || j == size - 1)
                                 {
-                                    Console.Write(i);
+                                    Console.Write(i % 10);
                                     Console.ResetColor();
                                     break;
                                 }
                                 if (i == 0 || i == size - 1)
                                 {
-                                    Console.Write(j);
+                                    Console.Write(j % 10);
                                     Console.ResetColor();
                                     break;
                                 }
@@ -204,7 +204,7 @@ namespace LeisureModel
             int i, j, firstPlayerScore = 0, secondPlayerScore = 0;
             bool isTurnPossible, isTurnProceed;
             byte impossibleTurnsInTheRow = 0;
-            Field field = new Field(8);
+            Field field = new Field(15);
             Piece firstPlayerPiece = new Piece(1, 0, 0);
             Piece secondPlayerPiece = new Piece(2, 0, 0);
 
