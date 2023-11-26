@@ -41,30 +41,41 @@ namespace LeisureModel
                                 Console.Write('0');
                                 break;
                             case 1:
+                                Console.ForegroundColor = ConsoleColor.Red;
                                 Console.Write('X');
+                                Console.ResetColor();
                                 break;
                             case 2:
+                                Console.ForegroundColor = ConsoleColor.Blue;
                                 Console.Write('H');
+                                Console.ResetColor();
                                 break;
                             case 3:
-                                if (i == 0 && j == 0)
+                                Console.ForegroundColor = ConsoleColor.DarkGray;
+                                if (i == 0 && (j == 0 || j == size - 1))
                                 {
-                                    Console.Write(i);
+                                    Console.Write("*");
+                                    Console.ResetColor();
                                     break;
                                 }
+
+                                if (i == size - 1 && (j == 0 || j == size - 1))
+                                {
+                                    Console.Write("*");
+                                    Console.ResetColor();
+                                    break;
+                                }
+
                                 if (j == 0 || j == size - 1)
                                 {
                                     Console.Write(i);
+                                    Console.ResetColor();
                                     break;
                                 }
                                 if (i == 0 || i == size - 1)
                                 {
                                     Console.Write(j);
-                                    break;
-                                }
-                                if (j == size - 1 && j == size - 1)
-                                {
-                                    Console.Write(j);
+                                    Console.ResetColor();
                                     break;
                                 }
                                 break;
@@ -230,8 +241,8 @@ namespace LeisureModel
                 if (turn % 2 == 0)
                 {
                     Console.WriteLine("Player 2 turn");
-                    secondPlayerPiece.w = rnd.Next(1, 6);
-                    secondPlayerPiece.h = rnd.Next(1, 6);
+                    secondPlayerPiece.w = rnd.Next(1, 7);
+                    secondPlayerPiece.h = rnd.Next(1, 7);
 
                     Console.WriteLine("Piece is: w - {0}, h - {1}", secondPlayerPiece.w, secondPlayerPiece.h);
                     for (int m = 1; m < field.bounds; m++)
@@ -276,8 +287,8 @@ namespace LeisureModel
                 else
                 {
                     Console.WriteLine("Player 1 turn");
-                    firstPlayerPiece.w = rnd.Next(1, 6);
-                    firstPlayerPiece.h = rnd.Next(1, 6);
+                    firstPlayerPiece.w = rnd.Next(1, 7);
+                    firstPlayerPiece.h = rnd.Next(1, 7);
 
                     Console.WriteLine("Piece is: w - {0}, h - {1}", firstPlayerPiece.w, firstPlayerPiece.h);
 
