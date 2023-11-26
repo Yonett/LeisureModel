@@ -251,7 +251,11 @@ namespace LeisureModel
                         {
                             if (field.cells[m, n].kind == 0)
                                 isTurnPossible |= field.CanPlacePiece(secondPlayerPiece, m, n);
+                            if (isTurnPossible)
+                                break;
                         }
+                        if (isTurnPossible)
+                            break;
                     }
 
                     if (isTurnPossible)
@@ -298,7 +302,11 @@ namespace LeisureModel
                         {
                             if (field.cells[m, n].kind == 0)
                                 isTurnPossible |= field.CanPlacePiece(firstPlayerPiece, m, n);
+                            if (isTurnPossible)
+                                break;
                         }
+                        if (isTurnPossible)
+                            break;
                     }
 
                     if (isTurnPossible)
